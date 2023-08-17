@@ -1,0 +1,27 @@
+uuid: 29349391-db46-4b30-a069-ed52477d95f6
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_applied_for_role
+field_name: field_applied_for_role
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Bloggers
+      label: Bloggers
+    -
+      value: 'Guest Bloggers'
+      label: 'Guest Bloggers'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

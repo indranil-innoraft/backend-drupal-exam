@@ -1,0 +1,20 @@
+uuid: 2fa31a80-99b5-40d1-b850-cea94cfee766
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_otp
+  module:
+    - user
+id: user.user.field_otp
+field_name: field_otp
+entity_type: user
+bundle: user
+label: OTP
+description: 'An OTP is being send to your mentioned emial address its required to create a account.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

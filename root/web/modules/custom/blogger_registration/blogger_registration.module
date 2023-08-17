@@ -1,0 +1,75 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Blogger_registration module.
+ */
+
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function blogger_registration_form_alter(&$form, $form_state, $form_id) {
+  if ($form_id == 'user_register_form') {
+    $test_email = 'indranilroy836@gmail.com';
+    $form['send_otp_button'] = [
+      '#type' => 'submit',
+      '#value' => t('Send OTP'),
+      '#attributes' => [
+          'user_email' => $test_email,
+        ],
+      '#ajax' => [
+          'callback' => 'send_email',
+        ],
+      ];
+    }
+}
+
+/**
+ * Sending email.
+ *
+ * @param array $form
+ *  Containing form data.
+ * @param FormStateInterface $form_state
+ *  Containing form values.
+ *
+ * @return object
+ *  returning ajax response.
+ */
+function send_email(array &$form, FormStateInterface $form_state) {
+  $triggering_element = $form_state->getTriggeringElement();
+  $user_email = $triggering_element['#attributes']['user_email'];
+  $mailManager = \Drupal::service('plugin.manager.mail');
+  $module = 'blogger_registration';
+  $key = 'otp_send';
+  $to = $user_email;
+  $params['message'] = rand(1000, 9999);
+  $params['title'] = "OTP for registration.";
+  $langcode = 'en';
+  $send = true;
+  $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
+  if (!$result['result']) {
+    $message = t('There was a problem sending your email notification to @email.', array('@email' => $to));
+    \Drupal::logger('mail-log')->error($message);
+  }
+  else {
+    $message = t('An email notification has been sent to @email ', array('@email' => $to));
+    \Drupal::logger('blogger_registration')->notice($message);
+  }
+  return new AjaxResponse();
+}
+
+/**
+ * Implements hook_mail().
+ */
+function blogger_registration_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'otp_send':
+      $message['from'] = \Drupal::config('system.site')->get('mail');
+      $message['subject'] = t('Create your account: @title', array('@title' => $params['title'] ));
+      $message['body'][] = $params['message'];
+      break;
+  }
+}

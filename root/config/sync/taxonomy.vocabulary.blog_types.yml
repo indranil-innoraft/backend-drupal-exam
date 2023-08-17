@@ -1,0 +1,8 @@
+uuid: 7a75e1dc-2a2f-499a-9d01-ab0fde5798f0
+langcode: en
+status: true
+dependencies: {  }
+name: 'Blog Types'
+vid: blog_types
+description: 'It will contains the blogs types.'
+weight: 0
