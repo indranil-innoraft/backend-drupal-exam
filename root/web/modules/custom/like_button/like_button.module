@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Like Button module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function like_button_theme() {
+  return [
+    'block_like_button' => [
+      'variables' => [
+        'vars' => NULL,
+      ],
+      'template' => 'block-like-button',
+    ],
+  ];
+}
+

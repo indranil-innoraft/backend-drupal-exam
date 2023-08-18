@@ -1,0 +1,5 @@
+like:
+  version: 1.x
+  css:
+    theme:
+      Css/like_button.css: {}
