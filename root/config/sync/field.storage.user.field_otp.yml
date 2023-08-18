@@ -1,0 +1,21 @@
+uuid: 593d13bc-7fef-4680-b75f-eef9be20de74
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_otp
+field_name: field_otp
+entity_type: user
+type: string
+settings:
+  max_length: 4
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

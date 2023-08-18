@@ -1,10 +1,15 @@
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
 module:
+  admin_toolbar: 0
+  admin_toolbar_links_access_filter: 0
+  admin_toolbar_search: 0
+  admin_toolbar_tools: 0
   automated_cron: 0
   big_pipe: 0
   block: 0
   block_content: 0
+  blogger_registration: 0
   breakpoint: 0
   ckeditor5: 0
   comment: 0
@@ -13,6 +18,7 @@ module:
   contextual: 0
   datetime: 0
   dblog: 0
+  devel: 0
   dynamic_page_cache: 0
   editor: 0
   field: 0
@@ -22,6 +28,7 @@ module:
   help: 0
   history: 0
   image: 0
+  like_button: 0
   link: 0
   menu_link_content: 0
   menu_ui: 0
@@ -33,15 +40,19 @@ module:
   path_alias: 0
   search: 0
   shortcut: 0
-  standard: 0
+  smtp: 0
   system: 0
   taxonomy: 0
   text: 0
+  token: 0
   toolbar: 0
   tour: 0
+  update: 0
   user: 0
   views_ui: 0
+  pathauto: 1
   views: 10
+  standard: 1000
 theme:
   olivero: 0
   claro: 0

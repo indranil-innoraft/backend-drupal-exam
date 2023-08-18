@@ -1,0 +1,26 @@
+blogger_registration.example:
+  path: '/api/blogs'
+  defaults:
+    _controller: '\Drupal\blogger_registration\Controller\BloggerRegistrationController::fetchBlogData'
+    _format: 'json'
+  methods: [GET]
+  requirements:
+    _permission: 'access content'
+
+blogger_registration.date:
+  path: '/api/blogs/{date_form}/{date_to}'
+  defaults:
+    _controller: '\Drupal\blogger_registration\Controller\BloggerRegistrationController::getJsonResposnSpecificDate'
+    _format: 'json'
+  methods: [GET]
+  requirements:
+    _permission: 'access content'
+
+blogger_registration.tag:
+  path: '/api/blogs/{tag}'
+  defaults:
+    _controller: '\Drupal\blogger_registration\Controller\BloggerRegistrationController::getJsonResposnSpecificTags'
+    _format: 'json'
+  methods: [GET]
+  requirements:
+    _permission: 'access content'

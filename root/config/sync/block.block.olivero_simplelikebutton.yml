@@ -1,0 +1,25 @@
+uuid: 6c5c25ce-db10-46a0-adad-72ab2b22ecb6
+langcode: en
+status: true
+dependencies:
+  module:
+    - like_button
+    - system
+  theme:
+    - olivero
+id: olivero_simplelikebutton
+theme: olivero
+region: content
+weight: -7
+provider: null
+plugin: like_button_simple_like_button
+settings:
+  id: like_button_simple_like_button
+  label: 'Simple Like button'
+  label_display: '0'
+  provider: like_button
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/blog/*'

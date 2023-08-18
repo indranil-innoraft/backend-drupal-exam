@@ -1,0 +1,5 @@
+name: 'Blogger_registration'
+type: module
+description: 'Help to register new blogger to the sites.'
+package: Custom Module
+core_version_requirement: ^10

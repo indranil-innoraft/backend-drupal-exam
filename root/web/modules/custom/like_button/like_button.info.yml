@@ -1,0 +1,5 @@
+name: 'Like Button'
+type: module
+description: 'Providing like button for content types.'
+package: Custom Module
+core_version_requirement: ^10

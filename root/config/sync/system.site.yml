@@ -2,8 +2,8 @@ _core:
   default_config_hash: VDJxTZtQR21qB4lvOq8zszJZLvLKrSPQpdn2E3T71Ww
 langcode: en
 uuid: bc74d1eb-c75a-4129-8074-eea4c0ae8dc0
-name: Drupal
-mail: ''
+name: 'backend druapl exam 1.0'
+mail: drupal.dev.2000@gmail.com
 slogan: ''
 page:
   403: ''
@@ -12,3 +12,4 @@ page:
 admin_compact_mode: false
 weight_select_max: 100
 default_langcode: en
+mail_notification: ''
